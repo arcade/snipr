@@ -1,0 +1,35 @@
+<form name="addSnippetForm" class="form-horizontal" role="form" ng-submit="addSnippet(snippet)">
+    <div class="form-group"
+        ng-class="{'has-error': addSnippetForm.snippetName.$invalid && addSnippetForm.snippetName.$dirty, 'has-feedback': addSnippetForm.snippetName.$dirty, 'has-success': addSnippetForm.snippetName.$valid && addSnippetForm.snippetName.$dirty}">
+        <label for="snippetName" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="snippetName" id="snippetName" placeholder="My snippet" ng-model="snippet.name" required>
+            <span  ng-show="addSnippetForm.snippetName.$dirty" class="glyphicon form-control-feedback"
+                ng-class="{'glyphicon-remove': addSnippetForm.snippetName.$invalid && addSnippetForm.snippetName.$dirty, 'glyphicon-ok': addSnippetForm.snippetName.$valid && addSnippetForm.snippetName.$dirty}"></span>
+        </div>
+    </div>
+
+    <div class="form-group"
+        ng-class="{'has-error': addSnippetForm.snippetLanguage.$invalid && addSnippetForm.snippetLanguage.$dirty, 'has-feedback': addSnippetForm.snippetLanguage.$dirty, 'has-success': addSnippetForm.snippetLanguage.$valid && addSnippetForm.snippetLanguage.$dirty}">
+        <label class="col-sm-2 control-label" for="snippetLanguage">Language</label>
+        <div class="col-sm-10">
+            <select class="form-control" name="snippetLanguage" id="snippetLanguage" ng-options="key as value for (key,value) in languages" ng-model="snippet.language" required></select>
+        </div>
+    </div>
+
+    <div class="form-group"
+        ng-class="{'has-error': addSnippetForm.snippetCode.$invalid && addSnippetForm.snippetCode.$dirty, 'has-feedback': addSnippetForm.snippetCode.$dirty, 'has-success': addSnippetForm.snippetCode.$valid && addSnippetForm.snippetCode.$dirty}">
+        <label class="col-sm-2 control-label" for="snippetCode">Code</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" rows="10" name="snippetCode" id="snippetCode" ng-model="snippet.code" required></textarea>
+            <span  ng-show="addSnippetForm.snippetName.$dirty" class="glyphicon form-control-feedback"
+                ng-class="{'glyphicon-remove': addSnippetForm.snippetCode.$invalid && addSnippetForm.snippetCode.$dirty, 'glyphicon-ok': addSnippetForm.snippetCode.$valid && addSnippetForm.snippetCode.$dirty}"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-default" type="submit" ng-disabled="!addSnippetForm.$valid"><i class="glyphicon glyphicon-plus"></i> Add</button>
+        </div>
+    </div>
+</form>

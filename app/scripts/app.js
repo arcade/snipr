@@ -17,4 +17,10 @@ app.config(function ($stateProvider, $locationProvider) {
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
     });
+
+    $stateProvider.state('add', {
+        url: '/add',
+        templateUrl: 'views/add.html',
+        controller: 'AddCtrl'
+    });
 });
