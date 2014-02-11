@@ -2,13 +2,13 @@ var app = angular.module('sniprApp');
 
 app.controller('AddCtrl', function ($scope, $state, snippets) {
     $scope.languages = {
-        'js': 'JavaScript',
+        'javascript': 'JavaScript',
         'coffee': 'CoffeeScript',
         'c': 'C',
         'cpp': 'C++',
-        'csharp': 'C#',
+        'cs': 'C#',
         'java': 'Java',
-        'rs': 'Rust'
+        'rust': 'Rust'
     };
 
     $scope.addSnippet = function (snippet) {
