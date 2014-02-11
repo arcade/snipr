@@ -4,8 +4,10 @@ var app = angular.module('sniprApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
+
     'ui.router',
-    'firebase'
+    'firebase',
+    'hljs'
 ]);
 
 app.config(function ($stateProvider, $locationProvider) {
