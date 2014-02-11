@@ -29,6 +29,15 @@ app.config(function ($stateProvider, $locationProvider) {
         templateUrl: 'views/add.html',
         controller: 'AddCtrl'
     });
+
+    $stateProvider.state('view', {
+        url: '/view/:key',
+        data: {
+            title: 'View Snippet'
+        },
+        templateUrl: 'views/view.html',
+        controller: 'ViewCtrl'
+    });
 });
 
 app.run(function ($rootScope, $state) {

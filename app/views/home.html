@@ -1,4 +1,10 @@
-<div class="row marketing">
-    <h4 ng-repeat="snippet in snippets">{{snippet.name}} <span class="label label-success">{{snippet.language}}</h4>
+<div class="panel panel-default" ng-repeat="(key, snippet) in snippets">
+    <div class="panel-heading">{{snippet.name}} <span class="label label-default pull-right">{{snippet.language}}</span></div>
+    <div class="panel-body">
+        {{snippet.description}}
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-primary" ui-sref="view({key: key})">View</button>
+    </div>
 </div>
 
