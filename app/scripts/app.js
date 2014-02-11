@@ -14,13 +14,26 @@ app.config(function ($stateProvider, $locationProvider) {
 
     $stateProvider.state('home', {
         url: '/',
+        data: {
+            title: 'Home'
+        },
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
     });
 
     $stateProvider.state('add', {
-        url: '/add',
+        url: 'add',
+        data: {
+            title: 'Add Snippet'
+        },
         templateUrl: 'views/add.html',
         controller: 'AddCtrl'
     });
 });
+
+app.run(function ($rootScope, $state) {
+    $rootScope.$on('$stateChangeSuccess', function () {
+        $rootScope.state = $state.$current;
+    });
+});
+
